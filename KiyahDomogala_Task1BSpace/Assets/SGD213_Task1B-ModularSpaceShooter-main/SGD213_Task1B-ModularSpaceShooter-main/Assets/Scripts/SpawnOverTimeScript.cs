@@ -1,30 +1,29 @@
-﻿using UnityEngine;
+﻿
+//SPAWN OVER TIME
+
+using UnityEngine;
 using System.Collections;
 
 public class SpawnOverTimeScript : MonoBehaviour
 {
 
-    // Object to spawn
+    // Object spawns
     [SerializeField]
     private GameObject spawnObject;
 
     // Delay between spawns
     [SerializeField]
-    private float spawnDelay = 2f;
-
+    private float spawnDelay = 1f;
     private Renderer ourRenderer;
 
-    // Use this for initialization
+    // Starts Game
     void Start()
     {
-
         ourRenderer = GetComponent<Renderer>();
 
-        // Stop our Spawner from being visible!
+        // Stops spawner from being visible
         ourRenderer.enabled = false;
-
-        // Call the given function after spawnDelay seconds, 
-        // and then repeatedly call it after spawnDelay seconds.
+        // Call the given function after spawnDelay seconds, and then repeatedly call it after spawnDelay seconds.
         InvokeRepeating("Spawn", spawnDelay, spawnDelay);
     }
 

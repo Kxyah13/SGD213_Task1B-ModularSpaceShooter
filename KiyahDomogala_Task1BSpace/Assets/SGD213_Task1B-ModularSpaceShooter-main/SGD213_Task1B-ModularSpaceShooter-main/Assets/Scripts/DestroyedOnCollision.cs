@@ -41,4 +41,5 @@ public class DestroyedOnCollision : MonoBehaviour
             // Use default collision code
         }
     }
+
 }
