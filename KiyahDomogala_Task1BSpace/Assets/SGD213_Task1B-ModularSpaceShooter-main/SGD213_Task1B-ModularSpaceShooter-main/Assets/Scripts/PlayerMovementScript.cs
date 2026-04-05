@@ -7,7 +7,7 @@ using System.Collections;
 public class PlayerMovementScript : MonoBehaviour {
     // HorizontalPlayerAcceleration indicates how fast the player accelerates Horizontally
     [SerializeField]
-    private float f_horPlayAccel = 50000f;
+    private float playerAcceleration = 5000f;
 
             private Rigidbody2D rb;
 
@@ -20,7 +20,9 @@ public class PlayerMovementScript : MonoBehaviour {
         float HorizontalInput = Input.GetAxis("Horizontal");
 
         if (HorizontalInput != 0.0f) {
-            Vector2 ForceToAdd=Vector2.right*HorizontalInput*f_horPlayAccel*Time.deltaTime;
+            Vector2 ForceToAdd=Vector2.right*HorizontalInput*playerAcceleration*Time.deltaTime;
             rb.AddForce(ForceToAdd);
             print(HorizontalInput);
-        } } }
+        } 
+    } 
+}
