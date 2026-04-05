@@ -9,18 +9,18 @@ public class PlayerMovementScript : MonoBehaviour {
     [SerializeField]
     private float f_horPlayAccel = 50000f;
 
-            private Rigidbody2D OURRigidbody;
+            private Rigidbody2D rb;
 
     // Use this for initialization
     void Start() {
         // Get OurRigidbodyComponent once at the start of the game and store a reference to it
-        OURRigidbody = GetComponent<Rigidbody2D>(); }
+        rb = GetComponent<Rigidbody2D>(); }
     // Update is called once per frame
     void Update() {
         float HorizontalInput = Input.GetAxis("Horizontal");
 
         if (HorizontalInput != 0.0f) {
             Vector2 ForceToAdd=Vector2.right*HorizontalInput*f_horPlayAccel*Time.deltaTime;
-            OURRigidbody.AddForce(ForceToAdd);
+            rb.AddForce(ForceToAdd);
             print(HorizontalInput);
         } } }
