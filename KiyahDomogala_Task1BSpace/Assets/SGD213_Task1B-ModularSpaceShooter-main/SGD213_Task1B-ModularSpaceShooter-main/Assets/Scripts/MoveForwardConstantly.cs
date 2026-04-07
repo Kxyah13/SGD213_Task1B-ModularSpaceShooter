@@ -6,8 +6,6 @@ using System.Collections;
 
 public class MoveForwardConstantly : MonoBehaviour
 {
-    
-  // Use this for initialization
    void Start()
    {
 

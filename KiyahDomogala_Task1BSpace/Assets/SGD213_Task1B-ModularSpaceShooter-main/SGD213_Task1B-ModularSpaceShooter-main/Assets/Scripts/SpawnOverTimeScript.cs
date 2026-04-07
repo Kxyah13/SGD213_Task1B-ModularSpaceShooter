@@ -16,7 +16,6 @@ public class SpawnOverTimeScript : MonoBehaviour
     private float spawnDelay = 1f;
     private Renderer ourRenderer;
 
-    // Starts Game
     void Start()
     {
         ourRenderer = GetComponent<Renderer>();
@@ -32,7 +31,7 @@ public class SpawnOverTimeScript : MonoBehaviour
         float x1 = transform.position.x - ourRenderer.bounds.size.x / 2;
         float x2 = transform.position.x + ourRenderer.bounds.size.x / 2;
 
-        // Randomly pick a point within the spawn object
+        // Randomly picks a point within the spawn object
         Vector2 spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
 
         // Spawn the object at the 'spawnPoint' position
